@@ -177,6 +177,13 @@ public:
 		return true;
 	}
 };
+class EmptySpace : public ChessPiece
+{
+public:	
+	EmptySpace(string nm, string clr, char sym) : ChessPiece(nm, clr, sym)
+	{
+	}
+};
 class ChessBoard
 {
 public:
@@ -222,11 +229,9 @@ public:
 		{
 			for (int j = 0; j < 8; j++)
 			{
-				grid[i][j] = new Pawn(" ", " ", ' ');
+				grid[i][j] = new EmptySpace(" ", " ", ' ');
 			}
 		}
-		//p1=player1;
-		//p2=player2;
 	}
 
 	void display()
@@ -258,7 +263,7 @@ public:
 			if (grid[destRow][destCol]->get_symbol() == ' ')
 			{
 				grid[destRow][destCol] = grid[srcRow][srcCol];
-				grid[srcRow][srcCol] = new Pawn(" ", " ", '-');
+				grid[srcRow][srcCol] = new EmptySpace(" ", " ", '-');
 				return true;
 			}
 			else if ((grid[srcRow][srcCol]->get_color()!= grid[destRow][destCol]->get_color()))
@@ -266,7 +271,7 @@ public:
 
 				delete grid[destRow][destCol];
 				grid[destRow][destCol] = grid[srcRow][srcCol];
-				grid[srcRow][srcCol] = new Pawn(" ", " ", '-');
+				grid[srcRow][srcCol] = new EmptySpace(" ", " ", '-');
 				return true;
 			}
 			else

@@ -31,3 +31,5 @@ abdul_ahad4 beginner 0
 sweety beginner 0
 huzaila/jawairia beginner 0
 huzaila/jawairia/hassaan beginner 0
+j beginner 0
+g beginner 0
